@@ -14,6 +14,7 @@ export default (url) => {
     } catch (err) {
       setError(err.message);
       setLoading(false);
+      return err;
     }
   };
 
