@@ -18,12 +18,21 @@ const Dishes = (props) => {
 
   const renderItem = (dish) => {
     return (
-      <View style={Styles.inner}>
-        <Image style={Styles.image} source={{ uri: dish.item.strMealThumb }} />
-        <Text numberOfLines={1} style={Styles.text}>
-          {dish.item.strMeal}
-        </Text>
-      </View>
+      <Pressable
+        onPress={() =>
+          props.navigation.navigate("DishDetail", dish.item.idMeal)
+        }
+      >
+        <View style={Styles.inner}>
+          <Image
+            style={Styles.image}
+            source={{ uri: dish.item.strMealThumb }}
+          />
+          <Text numberOfLines={1} style={Styles.text}>
+            {dish.item.strMeal}
+          </Text>
+        </View>
+      </Pressable>
     );
   };
 

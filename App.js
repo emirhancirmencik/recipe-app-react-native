@@ -3,9 +3,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Categories from "./components/Categories";
 import { useFonts } from "expo-font";
-import { Image, Pressable, Text, View } from "react-native";
-import Dishes from "./components/Dishes/Dishes";
-import { ScreenStackHeaderBackButtonImage } from "react-native-screens";
+import { Pressable, Text } from "react-native";
+import Dishes from "./components/Dishes";
+import DishDetail from "./components/DishDetail";
 
 const Stack = createNativeStackNavigator();
 
@@ -42,7 +42,7 @@ function App() {
             fontSize: 25,
             borderRadius: 50,
             backgroundColor: "rgba(0,0,0,0.05)",
-            fontWeight: "300",
+            fontWeight: "400",
             paddingHorizontal: 15,
             paddingVertical: 5,
           }}
@@ -72,6 +72,21 @@ function App() {
           component={Dishes}
           options={{
             headerTitle: () => renderTitle("Dishes"),
+            headerStyle: {
+              backgroundColor: "#f9a825",
+              height: 200,
+            },
+            headerTintColor: "#666",
+            headerTitleAlign: "center",
+            headerBackVisible: false,
+            headerLeft: () => renderBack(),
+          }}
+        />
+        <Stack.Screen
+          name="DishDetail"
+          component={DishDetail}
+          options={{
+            headerTitle: () => renderTitle("Recipe..."),
             headerStyle: {
               backgroundColor: "#f9a825",
               height: 200,
