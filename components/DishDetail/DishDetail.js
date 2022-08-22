@@ -3,11 +3,10 @@ import {
   View,
   Image,
   ScrollView,
-  Button,
   Linking,
   Pressable,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import useFetch from "../../hooks/useFetch";
 import Styles from "./DishDetail.styles";
 
